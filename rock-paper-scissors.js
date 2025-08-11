@@ -81,15 +81,15 @@ function playGame() {
         const humanChoice = getHumanChoice();
 
         // DEBUGGING CONSOLE.LOGS ***********************
-        console.log("humanChoice: ", humanChoice);
-        console.log("computerChoice: ", computerChoice);
+        // console.log("humanChoice: ", humanChoice);
+        // console.log("computerChoice: ", computerChoice);
         // **********************************************
         
         playRound(humanChoice, computerChoice);
 
         // DEBUGGING CONSOLE.LOGS ***********************
-        console.log("humanScore: ", humanScore);
-        console.log("computerScore: ", computerScore);
+        // console.log("humanScore: ", humanScore);
+        // console.log("computerScore: ", computerScore);
         // **********************************************
     }
 
