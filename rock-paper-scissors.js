@@ -1,5 +1,5 @@
 function getComputerChoice() {
-    const randomNumber = Math.floor(Math.random()*100)
+    const randomNumber = Math.floor(Math.random()*100);
     let choice = "";
 
     if (randomNumber<=33) choice = "Rock"; 
@@ -8,7 +8,14 @@ function getComputerChoice() {
 
     return choice;
 }
-        
-const choice = getComputerChoice();
 
-console.log(choice);
+function getHumanChoice() {
+    let choice = prompt("Choose your weapon: ");
+    return choice;
+}
+
+const computerChoice = getComputerChoice();
+const humanChoice = getHumanChoice();
+
+let humanScore = 0;
+let computerScore = 0;
