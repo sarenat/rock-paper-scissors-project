@@ -14,14 +14,6 @@ function getHumanChoice() {
     return choice;
 }
 
-// Load choices into variables
-const computerChoice = getComputerChoice();
-const humanChoice = getHumanChoice();
-
-// DEBUGGING CONSOLE.LOGS
-console.log("humanChoice: ", humanChoice);
-console.log("computerChoice: ", computerChoice);
-
 // Initialize computer score and human score
 let humanScore = 0;
 let computerScore = 0;
@@ -79,9 +71,30 @@ function playRound(humanChoice, computerChoice) {
                 break;
             }
     }
-    console.log("winnerPrompt: ", winnerPrompt);
-    console.log("humanScore: ", humanScore);
-    console.log("computerScore: ", computerScore);
+    return alert(winnerPrompt);
 }
 
-playRound(humanChoice, computerChoice);
+function playGame() {
+    for (i=0; i<5; i++) {
+        // Load choices into variables
+        const computerChoice = getComputerChoice();
+        const humanChoice = getHumanChoice();
+
+        // DEBUGGING CONSOLE.LOGS ***********************
+        console.log("humanChoice: ", humanChoice);
+        console.log("computerChoice: ", computerChoice);
+        // **********************************************
+        
+        playRound(humanChoice, computerChoice);
+
+        // DEBUGGING CONSOLE.LOGS ***********************
+        console.log("humanScore: ", humanScore);
+        console.log("computerScore: ", computerScore);
+        // **********************************************
+    }
+
+    if (humanScore > computerScore) return alert("You win the game!");
+    else if (computerScore > humanScore) return alert("You lost the game!");
+    else return alert("It's a tie!");
+}
+playGame();
