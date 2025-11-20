@@ -75,26 +75,48 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
-    for (i=0; i<5; i++) {
+    // for (i=0; i<5; i++) {
         // Load choices into variables
-        const computerChoice = getComputerChoice();
-        const humanChoice = getHumanChoice();
+        // const computerChoice = getComputerChoice();
+        // const humanChoice = getHumanChoice();
 
         // DEBUGGING CONSOLE.LOGS ***********************
         // console.log("humanChoice: ", humanChoice);
         // console.log("computerChoice: ", computerChoice);
         // **********************************************
-        
-        playRound(humanChoice, computerChoice);
+    
+        // playRound(humanChoice, computerChoice);
 
         // DEBUGGING CONSOLE.LOGS ***********************
         // console.log("humanScore: ", humanScore);
         // console.log("computerScore: ", computerScore);
         // **********************************************
-    }
+    //}
 
-    if (humanScore > computerScore) return alert("You win the game!");
-    else if (computerScore > humanScore) return alert("You lost the game!");
-    else return alert("It's a tie!");
+    const rock = document.createElement("button");
+    const paper = document.createElement("button");
+    const scissors = document.createElement("button");
+
+    rock.textContent = "Rock";
+    paper.textContent = "Paper";
+    scissors.textContent = "Scissors";
+
+    rock.addEventListener('click', () => {
+        playRound("rock", getComputerChoice())
+    });
+    paper.addEventListener('click', () => {
+        playRound("paper", getComputerChoice())
+    });
+    scissors.addEventListener('click', () => {
+        playRound("scissors", getComputerChoice())
+    });
+
+    document.body.appendChild(rock);
+    document.body.appendChild(paper);
+    document.body.appendChild(scissors);
+
+    // if (humanScore > computerScore) return alert("You win the game!");
+    // else if (computerScore > humanScore) return alert("You lost the game!");
+    // else return alert("It's a tie!");
 }
 playGame();
