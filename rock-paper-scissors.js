@@ -102,9 +102,10 @@ function playRound(humanChoice, computerChoice) {
     computerScoreDisplay.textContent = `Computer: ${computerScore}`;
 
     scoreBoard.appendChild(humanScoreDisplay);
-    scoreBoard.appendChild(humanScoreDisplay);
+    scoreBoard.appendChild(computerScoreDisplay);
 
-    if ((humanScore || computerScore) > 4) {
+    if ((humanScore > 4) || (computerScore > 4)) {
+        document.body.removeChild(winner);
         const rockButton = document.getElementById("rockButton");
         const paperButton = document.getElementById("paperButton");
         const scissorsButton = document.getElementById("scissorsButton");
